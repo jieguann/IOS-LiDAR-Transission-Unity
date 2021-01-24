@@ -1,5 +1,6 @@
 # IOS-LiDAR-Transission-Unity
 
+
 MQTT address, port and topic (temporaly) for accessing the byte of the depth image present below.
 
 Address: mqtt.fluux.io
@@ -7,6 +8,8 @@ Address: mqtt.fluux.io
 Port: 1883
 
 Topic: jie/guan
+
+The depth image will be a greyscale depth image.
 
 
  Unity Lidar Depth Image class including method to get the depth image of the environmetn and human.
