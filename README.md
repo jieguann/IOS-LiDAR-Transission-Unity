@@ -25,4 +25,6 @@ https://www.andreasjakl.com/visualize-ar-depth-maps-in-unity-part-5/
 The code is refering from 
 
 
-Takashi Yoshinaga Vertices Example https://github.com/TakashiYoshinaga/iPad-LiDAR-Depth-Sample-for-Unity
+Takashi Yoshinaga Vertices Example
+
+https://github.com/TakashiYoshinaga/iPad-LiDAR-Depth-Sample-for-Unity
