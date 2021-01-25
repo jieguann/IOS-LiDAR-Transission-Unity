@@ -143,12 +143,16 @@ public class DepthScript : MonoBehaviour
             return;
         }
 
-        if (humanDepthTexture == null || humanDepthTexture.width != image.width || humanDepthTexture.height != image.height)
-        {
-            humanDepthTexture = new Texture2D(image.width, image.height, image.format.AsTextureFormat(), false);
-        }
 
-        humanDepthView.texture = humanDepthTexture;
+        using (image)
+        {
+            if (humanDepthTexture == null || humanDepthTexture.width != image.width || humanDepthTexture.height != image.height)
+            {
+                humanDepthTexture = new Texture2D(image.width, image.height, image.format.AsTextureFormat(), false);
+            }
+
+            humanDepthView.texture = humanDepthTexture;
+        }
     }
 
     void UpdateEnvironmentConfidenceImage()
