@@ -264,6 +264,7 @@ public class DepthScript : MonoBehaviour
         UpdateCameraImage();
         UpdateEnvironmentDepthImage();
         UpdateEnvironmentConfidenceImage();
+        updateHumanDepthImage();
     }
 
     // Start is called before the first frame update

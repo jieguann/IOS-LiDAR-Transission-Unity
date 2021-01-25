@@ -405,10 +405,12 @@ MonoBehaviour:
   m_cameraView: {fileID: 1577749885}
   m_originalDepthView: {fileID: 1114040582}
   m_grayDepthView: {fileID: 347273445}
-  m_confidenceView: {fileID: 328128513}
+  humanDepthView: {fileID: 328128513}
   near: 0.2
   far: 3
   m_DepthTextureFloat: {fileID: 0}
+  m_DepthTextureBGRA: {fileID: 0}
+  humanDepthTexture: {fileID: 0}
 --- !u!4 &165585585
 Transform:
   m_ObjectHideFlags: 0
@@ -501,7 +503,7 @@ GameObject:
   - component: {fileID: 328128514}
   - component: {fileID: 328128513}
   m_Layer: 5
-  m_Name: ConfidenceImage
+  m_Name: HumanDepthImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -641,6 +643,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -651,6 +657,10 @@ PrefabInstance:
     - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
       propertyPath: m_LocalRotation.x
@@ -665,14 +675,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -685,15 +687,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585262, guid: d843739baa752c948b1da293164047ef, type: 3}
-      propertyPath: brokerAddress
-      value: mqtt.fluux.io
-      objectReference: {fileID: 0}
+      propertyPath: depth
+      value: 
+      objectReference: {fileID: 1684656838}
     - target: {fileID: 8306982129227585262, guid: d843739baa752c948b1da293164047ef, type: 3}
-      propertyPath: autoConnect
+      propertyPath: autoTest
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585262, guid: d843739baa752c948b1da293164047ef, type: 3}
-      propertyPath: autoTest
+      propertyPath: autoConnect
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585262, guid: d843739baa752c948b1da293164047ef, type: 3}
@@ -701,9 +703,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585262, guid: d843739baa752c948b1da293164047ef, type: 3}
-      propertyPath: depth
-      value: 
-      objectReference: {fileID: 1684656838}
+      propertyPath: brokerAddress
+      value: mqtt.fluux.io
+      objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585263, guid: d843739baa752c948b1da293164047ef, type: 3}
       propertyPath: m_Name
       value: MQTT
@@ -1285,7 +1287,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 165585584}
   depthByte: 
-  rawImage: {fileID: 0}
   depthImage: {fileID: 0}
 --- !u!4 &1684656839
 Transform:
