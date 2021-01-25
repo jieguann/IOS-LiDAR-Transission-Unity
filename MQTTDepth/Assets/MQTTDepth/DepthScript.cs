@@ -20,7 +20,8 @@ public class DepthScript : MonoBehaviour
     [SerializeField]
     RawImage m_grayDepthView;
     [SerializeField]
-    RawImage m_confidenceView;
+    //RawImage m_confidenceView;
+    RawImage humanDepthView;
 
 
     [SerializeField]
@@ -33,6 +34,8 @@ public class DepthScript : MonoBehaviour
     public Texture2D m_DepthTextureBGRA;
     Texture2D m_DepthConfidenceR8;
     Texture2D m_DepthConfidenceRGBA;
+    //human
+    public Texture2D humanDepthTexture;
 
     void OnEnable()
     {
@@ -132,6 +135,22 @@ public class DepthScript : MonoBehaviour
 
     }
 
+
+    void updateHumanDepthImage()
+    {
+        if (!m_OcclusionManager.TryAcquireHumanDepthCpuImage(out XRCpuImage image))
+        {
+            return;
+        }
+
+        if (humanDepthTexture == null || humanDepthTexture.width != image.width || humanDepthTexture.height != image.height)
+        {
+            humanDepthTexture = new Texture2D(image.width, image.height, image.format.AsTextureFormat(), false);
+        }
+
+        humanDepthView.texture = humanDepthTexture;
+    }
+
     void UpdateEnvironmentConfidenceImage()
     {
 
@@ -159,7 +178,7 @@ public class DepthScript : MonoBehaviour
             ConvertR8ToConfidenceMap(m_DepthConfidenceR8, m_DepthConfidenceRGBA);
 
 
-            m_confidenceView.texture = m_DepthConfidenceRGBA;
+            //m_confidenceView.texture = m_DepthConfidenceRGBA;
         }
 
     }
