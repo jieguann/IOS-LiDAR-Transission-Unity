@@ -1,6 +1,7 @@
 # IOS-LiDAR-Transission-Unity
 
 
+**Basic Setup**
 MQTT address, port and topic (temporaly) for accessing the byte of the depth image present below.
 
 Address: mqtt.fluux.io
