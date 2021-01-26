@@ -16,7 +16,9 @@ The depth image will be a greyscale depth image.
 
 Unity Lidar Depth Image class including method to get the depth image of the environmetn and human.
 
- 
+
+## Reference ##
+
 https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@4.1/api/UnityEngine.XR.ARFoundation.AROcclusionManager.html
 
 Great Tutorials for accessing depth map
@@ -24,7 +26,6 @@ Great Tutorials for accessing depth map
 https://www.andreasjakl.com/visualize-ar-depth-maps-in-unity-part-5/
 
 
-The code is refering from 
 
 
 Takashi Yoshinaga Vertices Example
