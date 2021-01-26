@@ -10,7 +10,7 @@ Port: 1883
 Topic: jie/guan
 
 The depth image will be a greyscale depth image.
-![Alt text](image/)
+![Alt text](Images/8959f8ab1e50ac892b3d99719051e26.jpg)
 
 Unity Lidar Depth Image class including method to get the depth image of the environmetn and human.
 
