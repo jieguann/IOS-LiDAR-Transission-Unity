@@ -13,6 +13,8 @@ Topic: jie/guan
 
 Use this project to test the receiving in Unity.
 
+https://github.com/jieguann/Unity-Image-Transmission
+
 The depth image will be a greyscale depth image.
 ![Alt text](Images/8959f8ab1e50ac892b3d99719051e26.jpg)
 
