@@ -216,7 +216,7 @@ namespace M2MqttUnity.Examples
                 //print(msg.GetType());
 
 
-                receiveByte = message;
+                //receiveByte = message;
             }
 
             if (topic == "teletouch/colorImage")
@@ -226,7 +226,7 @@ namespace M2MqttUnity.Examples
                 //sensor2 = Single.Parse(msg);
                 //print("topic2: " + sensor2);
 
-                //receiveByte = message;
+                receiveByte = message;
             }
 
             if (topic == "teletouch/humanImage")
