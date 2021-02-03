@@ -22,10 +22,7 @@ namespace M2MqttUnity.Examples
     public class MQTTTest : M2MqttUnityClient
     {
         public getDepth depth;
-        public byte[] DepthByteToSend; 
-        public byte[] ColorByteToSend;
-        public byte[] HumanByteToSend;
-
+        public byte[] byteToSend;
         [Tooltip("Set this to true to perform a testing cycle automatically on startup")]
         public bool autoTest = false;
        
@@ -34,27 +31,22 @@ namespace M2MqttUnity.Examples
         private bool updateUI = false;
         //private JsonData Data;
 
-        //public string topic1;
-        //public string topic2;
-        //public string topic3;
+        public string topic1;
+        public string topic2;
+        public string topic3;
 
 
-        //public float sensor1;
-        //public float sensor2;
-        //public float light;
-        public byte[] depthByte;
-        public byte[] colorByte;
-        public byte[] humanByte;
+        public float sensor1;
+        public float sensor2;
+        public float light;
+        public byte[] receiveByte;
 
 
         public void TestPublish()
         {
             
             //client.Publish("M2MQTT_Unity/test", System.Text.Encoding.UTF8.GetBytes("Test message"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
-            client.Publish("vritualtouch/lidar/depthImage", DepthByteToSend, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
-            client.Publish("vritualtouch/lidar/colorImage", DepthByteToSend, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
-            //client.Publish("vritualtouch/lidar/humanImage", DepthByteToSend, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
-
+            client.Publish("jie/guan", byteToSend, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             print("Test message published");
             //AddUiMessage("Test message published.");
         }
@@ -124,18 +116,13 @@ namespace M2MqttUnity.Examples
             */
         }
 
-
-
-        //comment the subscribetopics
-        /*
         protected override void SubscribeTopics()
         {
-            client.Subscribe(new string[] { "vritualtouch/lidar/depthImage" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-            client.Subscribe(new string[] { "vritualtouch/lidar/colorImage" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-            client.Subscribe(new string[] { "vritualtouch/lidar/humanImage" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+            client.Subscribe(new string[] { "jie/guan" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+            client.Subscribe(new string[] { "ocad/creationandcomputation/experiment3/sensor2" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+            client.Subscribe(new string[] { "ocad/creationandcomputation/experiment3/light" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
 
         }
-        */
 
         protected override void UnsubscribeTopics()
         {
@@ -213,8 +200,6 @@ namespace M2MqttUnity.Examples
             base.Start();
         }
 
-
-        /*
         protected override void DecodeMessage(string topic, byte[] message)
         {
             string msg = System.Text.Encoding.UTF8.GetString(message);
@@ -222,35 +207,30 @@ namespace M2MqttUnity.Examples
             StoreMessage(msg);
             //Data = JsonMapper.ToObject(msg);
 
-            if (topic == "vritualtouch/lidar/depthImage")
+            if (topic == "jie/guan")
             {
                 //print("1: " + Single.Parse(msg));
                 //print(msg.GetType());
-                depthByte = message;
+                receiveByte = message;
             }
 
-            if (topic == "vritualtouch/lidar/colorImage")
+            if (topic == "ocad/creationandcomputation/experiment3/sensor2")
             {
                 //print("1: " + Single.Parse(msg));
                 //print(msg.GetType());
-                //sensor2 = Single.Parse(msg);
-                //print("topic2: " + sensor2);
-                colorByte = message;
-
+                sensor2 = Single.Parse(msg);
+                print("topic2: " + sensor2);
             }
 
-            if (topic == "vritualtouch/lidar/humanImage")
+            if (topic == "ocad/creationandcomputation/experiment3/light")
             {
                 //print("1: " + Single.Parse(msg));
                 //print(msg.GetType());
-                //light = Single.Parse(msg);
-                //print("light: " + light);
-                humanByte = message;
-
+                light = Single.Parse(msg);
+                print("light: " + light);
             }
 
         }
-        */
 
         private void StoreMessage(string eventMsg)
         {
@@ -266,9 +246,7 @@ namespace M2MqttUnity.Examples
         protected override void Update()
         {
             base.Update(); // call ProcessMqttEvents()
-            DepthByteToSend = depth.depthByte;
-            ColorByteToSend = depth.colorByte;
-            HumanByteToSend = depth.humanByte;
+            byteToSend = depth.depthByte;
             
             //TestPublish();
             //ProcessMessage(msg);

@@ -10,18 +10,6 @@ public class getDepth : MonoBehaviour
     public byte[] depthByte;
     //public RawImage rawImage;
     public Texture2D depthImage;
-<<<<<<< HEAD
-
-    //For camera color image
-    public byte[] colorByte;
-    public Texture2D colorImage;
-
-    //For human depth image
-    public byte[] humanByte;
-    public Texture2D humanImage;
-
-=======
->>>>>>> parent of f5d22e2... Add color image to getpixel
     // Start is called before the first frame update
     void Start()
     {
@@ -40,26 +28,5 @@ public class getDepth : MonoBehaviour
         depthByte = depthImage.EncodeToPNG();
 
 
-<<<<<<< HEAD
-        //For camera color image
-        if(colorImage != null)
-        {
-            colorImage = new Texture2D(colorImage.width, colorImage.height, TextureFormat.RGBA32, false);
-        }
-        colorImage = image.m_CameraTexture;
-        colorByte = colorImage.EncodeToPNG();
-
-
-        //For human depth image
-        if (humanImage != null)
-        {
-            humanImage = new Texture2D(humanImage.width, humanImage.height, TextureFormat.RGBA32, false);
-        }
-        humanImage = image.humanDepthTexture;
-        humanByte = humanImage.EncodeToPNG();
-
-
-=======
->>>>>>> parent of f5d22e2... Add color image to getpixel
     }
 }
