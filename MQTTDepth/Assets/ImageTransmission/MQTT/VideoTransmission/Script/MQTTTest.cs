@@ -124,9 +124,9 @@ namespace M2MqttUnity.Examples
 
         protected override void SubscribeTopics()
         {
-            client.Subscribe(new string[] { "jie/guan" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-            client.Subscribe(new string[] { "ocad/creationandcomputation/experiment3/sensor2" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-            client.Subscribe(new string[] { "ocad/creationandcomputation/experiment3/light" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+            client.Subscribe(new string[] { "vritualtouch/lidar/depthImage" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+            client.Subscribe(new string[] { "vritualtouch/lidar/colorImage" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+            client.Subscribe(new string[] { "vritualtouch/lidar/humanImage" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
 
         }
 
@@ -213,14 +213,14 @@ namespace M2MqttUnity.Examples
             StoreMessage(msg);
             //Data = JsonMapper.ToObject(msg);
 
-            if (topic == "jie/guan")
+            if (topic == "vritualtouch/lidar/depthImage")
             {
                 //print("1: " + Single.Parse(msg));
                 //print(msg.GetType());
                 receiveByte = message;
             }
 
-            if (topic == "ocad/creationandcomputation/experiment3/sensor2")
+            if (topic == "vritualtouch/lidar/colorImage")
             {
                 //print("1: " + Single.Parse(msg));
                 //print(msg.GetType());
@@ -228,7 +228,7 @@ namespace M2MqttUnity.Examples
                 print("topic2: " + sensor2);
             }
 
-            if (topic == "ocad/creationandcomputation/experiment3/light")
+            if (topic == "vritualtouch/lidar/humanImage")
             {
                 //print("1: " + Single.Parse(msg));
                 //print(msg.GetType());
