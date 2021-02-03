@@ -34,15 +34,15 @@ namespace M2MqttUnity.Examples
         private bool updateUI = false;
         //private JsonData Data;
 
-        public string topic1;
-        public string topic2;
-        public string topic3;
+        //public string topic1;
+        //public string topic2;
+        //public string topic3;
 
 
-        public float sensor1;
-        public float sensor2;
-        public float light;
-        public byte[] receiveByte;
+        //public float sensor1;
+        //public float sensor2;
+        //public float light;
+        //public byte[] receiveByte;
 
 
         public void TestPublish()
@@ -224,16 +224,16 @@ namespace M2MqttUnity.Examples
             {
                 //print("1: " + Single.Parse(msg));
                 //print(msg.GetType());
-                sensor2 = Single.Parse(msg);
-                print("topic2: " + sensor2);
+                //sensor2 = Single.Parse(msg);
+                //print("topic2: " + sensor2);
             }
 
             if (topic == "vritualtouch/lidar/humanImage")
             {
                 //print("1: " + Single.Parse(msg));
                 //print(msg.GetType());
-                light = Single.Parse(msg);
-                print("light: " + light);
+                //light = Single.Parse(msg);
+                //print("light: " + light);
             }
 
         }
