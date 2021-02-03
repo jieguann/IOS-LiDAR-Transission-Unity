@@ -5,11 +5,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class getDepth : MonoBehaviour
-{
+{   
     public DepthScript image;
+
+    //For depth environment image
     public byte[] depthByte;
-    //public RawImage rawImage;
     public Texture2D depthImage;
+
+    //For camera color image
+    public byte[] colorByte;
+    public Texture2D colorImage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +24,9 @@ public class getDepth : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {if(depthImage != null) {
+    {
+        //For depth environment depth
+        if(depthImage != null) {
             depthImage = new Texture2D(depthImage.width, depthImage.height, TextureFormat.RGBA32, false);
         }
 
@@ -26,6 +34,14 @@ public class getDepth : MonoBehaviour
         depthImage = image.m_DepthTextureBGRA;
         //rawImage.texture = depthImage;
         depthByte = depthImage.EncodeToPNG();
+
+
+        //For camera color image
+        if(colorImage != null)
+        {
+            colorImage = new Texture2D(colorImage.width, depthImage.height, TextureFormat.RGBA32, false);
+        }
+        colorImage = image.m_CameraTexture;
 
 
     }
