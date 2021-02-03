@@ -47,7 +47,7 @@ namespace M2MqttUnity.Examples
             
             //client.Publish("M2MQTT_Unity/test", System.Text.Encoding.UTF8.GetBytes("Test message"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             client.Publish("teletouch/depthImage", DepthByte, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
-            //client.Publish("teletouch/colorImage", ColorByte, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+            client.Publish("teletouch/colorImage", ColorByte, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             client.Publish("teletouch/humanImage", HumanByte, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
 
             //print("Test message published");
@@ -121,9 +121,9 @@ namespace M2MqttUnity.Examples
 
         protected override void SubscribeTopics()
         {
-            client.Subscribe(new string[] { "jie/guan" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-            client.Subscribe(new string[] { "ocad/creationandcomputation/experiment3/sensor2" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-            client.Subscribe(new string[] { "ocad/creationandcomputation/experiment3/light" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+            client.Subscribe(new string[] { "teletouch/depthImage" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+            client.Subscribe(new string[] { "teletouch/colorImage" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+            client.Subscribe(new string[] { "teletouch/humanImage" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
 
         }
 
@@ -210,27 +210,33 @@ namespace M2MqttUnity.Examples
             StoreMessage(msg);
             //Data = JsonMapper.ToObject(msg);
 
-            if (topic == "jie/guan")
+            if (topic == "teletouch/depthImage")
             {
                 //print("1: " + Single.Parse(msg));
                 //print(msg.GetType());
+
+
                 receiveByte = message;
             }
 
-            if (topic == "ocad/creationandcomputation/experiment3/sensor2")
+            if (topic == "teletouch/colorImage")
             {
                 //print("1: " + Single.Parse(msg));
                 //print(msg.GetType());
-                sensor2 = Single.Parse(msg);
-                print("topic2: " + sensor2);
+                //sensor2 = Single.Parse(msg);
+                //print("topic2: " + sensor2);
+
+                //receiveByte = message;
             }
 
-            if (topic == "ocad/creationandcomputation/experiment3/light")
+            if (topic == "teletouch/humanImage")
             {
                 //print("1: " + Single.Parse(msg));
                 //print(msg.GetType());
-                light = Single.Parse(msg);
-                print("light: " + light);
+                //light = Single.Parse(msg);
+                //print("light: " + light);
+
+                //receiveByte = message;
             }
 
         }

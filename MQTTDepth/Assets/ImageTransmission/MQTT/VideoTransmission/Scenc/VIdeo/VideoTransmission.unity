@@ -216,6 +216,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &53928723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 53928725}
+  - component: {fileID: 53928724}
+  m_Layer: 0
+  m_Name: DepthScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &53928724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53928723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c54d9c155eec49fa8e56c2dda7f3815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CameraManager: {fileID: 0}
+  m_OcclusionManager: {fileID: 0}
+  m_cameraView: {fileID: 0}
+  m_originalDepthView: {fileID: 0}
+  m_grayDepthView: {fileID: 0}
+  humanDepthView: {fileID: 0}
+  near: 0
+  far: 0
+  m_CameraTexture: {fileID: 0}
+  m_DepthTextureFloat: {fileID: 0}
+  m_DepthTextureBGRA: {fileID: 0}
+  humanDepthTexture: {fileID: 0}
+--- !u!4 &53928725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53928723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &168388434
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +373,56 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &588398739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 588398741}
+  - component: {fileID: 588398740}
+  m_Layer: 0
+  m_Name: getDepth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &588398740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588398739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cdf12b5712e449fa89432d5cc5df094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 53928724}
+  depthByte: 
+  colorByte: 
+  humanByte: 
+  depthImage: {fileID: 0}
+  colorImage: {fileID: 0}
+  humanImage: {fileID: 0}
+--- !u!4 &588398741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588398739}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &803135112
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +899,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422601372}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c32a5a13c44d19e4593745bf1bfd1a3e, type: 3}
   m_Name: 
@@ -823,6 +928,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -833,6 +942,10 @@ PrefabInstance:
     - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
       propertyPath: m_LocalRotation.x
@@ -847,14 +960,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8306982129227585257, guid: d843739baa752c948b1da293164047ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -867,21 +972,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585262, guid: d843739baa752c948b1da293164047ef, type: 3}
-      propertyPath: brokerAddress
-      value: mqtt.fluux.io
+      propertyPath: depth
+      value: 
+      objectReference: {fileID: 588398740}
+    - target: {fileID: 8306982129227585262, guid: d843739baa752c948b1da293164047ef, type: 3}
+      propertyPath: autoTest
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585262, guid: d843739baa752c948b1da293164047ef, type: 3}
       propertyPath: autoConnect
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585262, guid: d843739baa752c948b1da293164047ef, type: 3}
-      propertyPath: autoTest
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8306982129227585262, guid: d843739baa752c948b1da293164047ef, type: 3}
       propertyPath: videoTexture
       value: 
       objectReference: {fileID: 803135115}
+    - target: {fileID: 8306982129227585262, guid: d843739baa752c948b1da293164047ef, type: 3}
+      propertyPath: brokerAddress
+      value: mqtt.fluux.io
+      objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585263, guid: d843739baa752c948b1da293164047ef, type: 3}
       propertyPath: m_Name
       value: MQTT

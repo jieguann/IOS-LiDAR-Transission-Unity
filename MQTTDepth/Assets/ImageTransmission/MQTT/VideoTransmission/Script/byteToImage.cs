@@ -23,12 +23,13 @@ public class byteToImage : MonoBehaviour
     {
         receiveBytes = mqtt.receiveByte;
 
-        if(receiveBytes != null)
+        if(receiveBytes != null )
         {
             receiveTexture.LoadImage(receiveBytes);
+            m_RawImage.texture = receiveTexture;
         }
         
 
-        m_RawImage.texture = receiveTexture;
+        
     }
 }
