@@ -158,6 +158,9 @@ public class DepthScript : MonoBehaviour
 =======
             UpdateRawImage(humanDepthTexture, image);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 67bd71a... Converte human depth to grey
+=======
 >>>>>>> parent of 67bd71a... Converte human depth to grey
 =======
 >>>>>>> parent of 67bd71a... Converte human depth to grey
