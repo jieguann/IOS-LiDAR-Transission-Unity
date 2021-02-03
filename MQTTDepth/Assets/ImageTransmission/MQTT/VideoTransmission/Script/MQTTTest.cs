@@ -46,7 +46,8 @@ namespace M2MqttUnity.Examples
         {
             
             //client.Publish("M2MQTT_Unity/test", System.Text.Encoding.UTF8.GetBytes("Test message"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
-            client.Publish("jie/guan", byteToSend, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+            client.Publish("teletouch/depthImage", byteToSend, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+            client.Publish("teletouch/depthImage2", byteToSend, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             //print("Test message published");
             //AddUiMessage("Test message published.");
         }

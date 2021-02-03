@@ -1027,7 +1027,7 @@ GameObject:
   - component: {fileID: 1320469292}
   - component: {fileID: 1320469291}
   m_Layer: 5
-  m_Name: ConfidenceImageText
+  m_Name: HumanDepthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1085,7 +1085,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Confidence(RGB)
+  m_Text: Human Depth
 --- !u!222 &1320469292
 CanvasRenderer:
   m_ObjectHideFlags: 0

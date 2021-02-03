@@ -20,8 +20,9 @@ public class DepthScript : MonoBehaviour
     [SerializeField]
     RawImage m_grayDepthView;
     [SerializeField]
-    //RawImage m_confidenceView;
     RawImage humanDepthView;
+    //RawImage m_confidenceView;
+
 
 
     [SerializeField]
@@ -207,6 +208,7 @@ public class DepthScript : MonoBehaviour
 
         // "Apply" the new pixel data to the Texture2D.
         texture.Apply();
+
     }
 
     void ConvertFloatToGrayScale(Texture2D txFloat, Texture2D txGray)
@@ -265,10 +267,11 @@ public class DepthScript : MonoBehaviour
 
     void OnCameraFrameReceived(ARCameraFrameEventArgs eventArgs)
     {
+        updateHumanDepthImage();
         UpdateCameraImage();
         UpdateEnvironmentDepthImage();
         UpdateEnvironmentConfidenceImage();
-        updateHumanDepthImage();
+        
     }
 
     // Start is called before the first frame update
