@@ -42,6 +42,7 @@ public class getDepth : MonoBehaviour
             colorImage = new Texture2D(colorImage.width, depthImage.height, TextureFormat.RGBA32, false);
         }
         colorImage = image.m_CameraTexture;
+        colorByte = colorImage.EncodeToPNG();
 
 
     }
