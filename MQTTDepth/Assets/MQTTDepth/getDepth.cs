@@ -16,6 +16,10 @@ public class getDepth : MonoBehaviour
     public byte[] colorByte;
     public Texture2D colorImage;
 
+    //For human depth image
+    public byte[] humanByte;
+    public Texture2D humanImage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,10 +43,19 @@ public class getDepth : MonoBehaviour
         //For camera color image
         if(colorImage != null)
         {
-            colorImage = new Texture2D(colorImage.width, depthImage.height, TextureFormat.RGBA32, false);
+            colorImage = new Texture2D(colorImage.width, colorImage.height, TextureFormat.RGBA32, false);
         }
         colorImage = image.m_CameraTexture;
         colorByte = colorImage.EncodeToPNG();
+
+
+        //For human depth image
+        if (humanImage != null)
+        {
+            humanImage = new Texture2D(humanImage.width, humanImage.height, TextureFormat.RGBA32, false);
+        }
+        humanImage = image.humanDepthTexture;
+        humanByte = humanImage.EncodeToPNG();
 
 
     }
