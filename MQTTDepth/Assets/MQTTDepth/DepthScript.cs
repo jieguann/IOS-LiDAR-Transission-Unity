@@ -36,7 +36,8 @@ public class DepthScript : MonoBehaviour
     Texture2D m_DepthConfidenceR8;
     Texture2D m_DepthConfidenceRGBA;
     //human
-    public Texture2D humanDepthTexture;
+    Texture2D humanDepthFloat;
+    public Texture2D humanDepthTexture;//Grey
 
     void OnEnable()
     {
@@ -147,12 +148,12 @@ public class DepthScript : MonoBehaviour
 
         using (image)
         {
-            if (humanDepthTexture == null || humanDepthTexture.width != image.width || humanDepthTexture.height != image.height)
+            if (humanDepthFloat == null || humanDepthFloat.width != image.width || humanDepthFloat.height != image.height)
             {
-                humanDepthTexture = new Texture2D(image.width, image.height, image.format.AsTextureFormat(), false);
+                humanDepthFloat = new Texture2D(image.width, image.height, image.format.AsTextureFormat(), false);
             }
-            UpdateRawImage(humanDepthTexture, image);
-            ConvertFloatToGrayScale(humanDepthTexture, humanDepthTexture);
+            UpdateRawImage(humanDepthFloat, image);
+            ConvertFloatToGrayScale(humanDepthFloat, humanDepthTexture);
             humanDepthView.texture = humanDepthTexture;
         }
     }
