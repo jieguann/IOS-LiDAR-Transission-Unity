@@ -16,10 +16,25 @@ public class byteToImage : MonoBehaviour
     void Start()
     {
         receiveTexture = new Texture2D(2, 2);
+        StartCoroutine(Waiter());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator Waiter()
+    {
+        yield return new WaitForSeconds(0.1f);
+        while (true)
+        {
+            yield return new WaitForSeconds(0.1f);
+            mqttReciveByte();
+            
+
+        }
+    }
+        // Update is called once per frame
+
+
+
+        void mqttReciveByte()
     {
         receiveBytes = mqtt.receiveByte;
 
@@ -32,4 +47,7 @@ public class byteToImage : MonoBehaviour
 
         
     }
+
+
+
 }
