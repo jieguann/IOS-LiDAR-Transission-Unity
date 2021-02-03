@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b15f82cc229284894964d2d30806969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HumanSegmentationStencilMode: 0
-  m_HumanSegmentationDepthMode: 0
+  m_HumanSegmentationStencilMode: 2
+  m_HumanSegmentationDepthMode: 1
   m_EnvironmentDepthMode: 2
   m_OcclusionPreferenceMode: 0
 --- !u!114 &17183484
