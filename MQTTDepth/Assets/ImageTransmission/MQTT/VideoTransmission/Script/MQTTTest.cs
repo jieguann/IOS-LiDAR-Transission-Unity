@@ -42,7 +42,9 @@ namespace M2MqttUnity.Examples
         //public float sensor1;
         //public float sensor2;
         //public float light;
-        //public byte[] receiveByte;
+        public byte[] depthByte;
+        public byte[] colorByte;
+        public byte[] humanByte;
 
 
         public void TestPublish()
@@ -217,7 +219,7 @@ namespace M2MqttUnity.Examples
             {
                 //print("1: " + Single.Parse(msg));
                 //print(msg.GetType());
-                receiveByte = message;
+                depthByte = message;
             }
 
             if (topic == "vritualtouch/lidar/colorImage")
@@ -226,6 +228,8 @@ namespace M2MqttUnity.Examples
                 //print(msg.GetType());
                 //sensor2 = Single.Parse(msg);
                 //print("topic2: " + sensor2);
+                colorByte = message;
+
             }
 
             if (topic == "vritualtouch/lidar/humanImage")
@@ -234,6 +238,8 @@ namespace M2MqttUnity.Examples
                 //print(msg.GetType());
                 //light = Single.Parse(msg);
                 //print("light: " + light);
+                humanByte = message;
+
             }
 
         }
