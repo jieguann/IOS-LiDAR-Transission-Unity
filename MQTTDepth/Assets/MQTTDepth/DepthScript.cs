@@ -157,6 +157,9 @@ public class DepthScript : MonoBehaviour
             ConvertFloatToGrayScale(humanDepthFloat, humanDepthTexture);
 =======
             UpdateRawImage(humanDepthTexture, image);
+<<<<<<< HEAD
+>>>>>>> parent of 67bd71a... Converte human depth to grey
+=======
 >>>>>>> parent of 67bd71a... Converte human depth to grey
             humanDepthView.texture = humanDepthTexture;
         }
