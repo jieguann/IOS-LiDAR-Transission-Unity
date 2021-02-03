@@ -124,6 +124,10 @@ namespace M2MqttUnity.Examples
             */
         }
 
+
+
+        //comment the subscribetopics
+        /*
         protected override void SubscribeTopics()
         {
             client.Subscribe(new string[] { "vritualtouch/lidar/depthImage" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
@@ -131,6 +135,7 @@ namespace M2MqttUnity.Examples
             client.Subscribe(new string[] { "vritualtouch/lidar/humanImage" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
 
         }
+        */
 
         protected override void UnsubscribeTopics()
         {
@@ -208,6 +213,8 @@ namespace M2MqttUnity.Examples
             base.Start();
         }
 
+
+        /*
         protected override void DecodeMessage(string topic, byte[] message)
         {
             string msg = System.Text.Encoding.UTF8.GetString(message);
@@ -243,6 +250,7 @@ namespace M2MqttUnity.Examples
             }
 
         }
+        */
 
         private void StoreMessage(string eventMsg)
         {
