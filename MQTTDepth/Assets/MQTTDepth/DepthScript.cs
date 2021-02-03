@@ -152,6 +152,7 @@ public class DepthScript : MonoBehaviour
                 humanDepthTexture = new Texture2D(image.width, image.height, image.format.AsTextureFormat(), false);
             }
             UpdateRawImage(humanDepthTexture, image);
+            ConvertFloatToGrayScale(humanDepthTexture, humanDepthTexture);
             humanDepthView.texture = humanDepthTexture;
         }
     }
