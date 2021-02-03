@@ -23,7 +23,7 @@ public class mqttPublish : MonoBehaviour
        
             while (true)
             {
-                yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSeconds(0.1f);
                 //button = GetComponent<Button>();
                 button.onClick.Invoke();
 
