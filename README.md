@@ -16,6 +16,7 @@ Use this project to test the receiving in Unity.
 The depth image will be a greyscale depth image.
 ![Alt text](Images/8959f8ab1e50ac892b3d99719051e26.jpg)
 
+<<<<<<< HEAD
 Unity Lidar Depth Image class including method to get the depth image of the environmetn and human.
 
 
@@ -33,3 +34,12 @@ https://www.andreasjakl.com/visualize-ar-depth-maps-in-unity-part-5/
 Takashi Yoshinaga Vertices Example
 
 https://github.com/TakashiYoshinaga/iPad-LiDAR-Depth-Sample-for-Unity
+=======
+ Unity Lidar Depth Image class including method to get the depth image of the environmetn and human.
+ 
+https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@4.1/api/UnityEngine.XR.ARFoundation.AROcclusionManager.html
+
+The code is refering from 
+
+Takashi Yoshinaga Vertices Example https://github.com/TakashiYoshinaga/iPad-LiDAR-Depth-Sample-for-Unity
+>>>>>>> parent of d902217... Update README.md
