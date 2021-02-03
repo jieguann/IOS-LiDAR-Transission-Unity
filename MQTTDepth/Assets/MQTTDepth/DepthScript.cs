@@ -148,22 +148,12 @@ public class DepthScript : MonoBehaviour
 
         using (image)
         {
-            if (humanDepthFloat == null || humanDepthFloat.width != image.width || humanDepthFloat.height != image.height)
+            if (humanDepthTexture == null || humanDepthTexture.width != image.width || humanDepthTexture.height != image.height)
             {
-                humanDepthFloat = new Texture2D(image.width, image.height, image.format.AsTextureFormat(), false);
+                humanDepthTexture = new Texture2D(image.width, image.height, image.format.AsTextureFormat(), false);
             }
-<<<<<<< HEAD
-            UpdateRawImage(humanDepthFloat, image);
-            ConvertFloatToGrayScale(humanDepthFloat, humanDepthTexture);
-=======
             UpdateRawImage(humanDepthTexture, image);
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 67bd71a... Converte human depth to grey
-=======
->>>>>>> parent of 67bd71a... Converte human depth to grey
-=======
->>>>>>> parent of 67bd71a... Converte human depth to grey
+            //ConvertFloatToGrayScale(humanDepthTexture, humanDepthTexture);
             humanDepthView.texture = humanDepthTexture;
         }
     }
