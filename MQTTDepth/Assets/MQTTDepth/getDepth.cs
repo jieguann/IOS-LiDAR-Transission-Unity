@@ -16,9 +16,11 @@ public class getDepth : MonoBehaviour
     void Update()
     {
         //For depth Image
+        /*
         if (depthImage != null) {
             depthImage = new Texture2D(depthImage.width, depthImage.height, TextureFormat.RGBA32, false);
         }
+        */
 
         //depthImage = image.m_DepthTextureFloat;
         depthImage = image.m_DepthTextureBGRA;
@@ -26,13 +28,28 @@ public class getDepth : MonoBehaviour
         depthByte = depthImage.EncodeToPNG();
 
 
-        //for color image
+        //for color image -- 　Use this will use too much iphone ram and out of memory
+        /*
         if(colorImage != null)
         {
             colorImage = new Texture2D(colorImage.width, colorImage.height, TextureFormat.RGBA32, false);
         }
+        */
         colorImage = image.m_CameraTexture;
         colorByte = colorImage.EncodeToPNG();
+        
+
+        //For human image
+        /*
+        if (humanImage != null)
+        {
+            humanImage = new Texture2D(humanImage.width, humanImage.height, TextureFormat.RGBA32, false);
+        }
+        */
+       
+        humanImage = image.humanDepthTexture;
+        humanByte = humanImage.EncodeToPNG();
+
 
 
     }
