@@ -5,11 +5,11 @@
 
 MQTT address, port and topic (temporaly) for accessing the byte of the depth image present below.
 
-**Address:** mqtt.fluux.io
+Address: mqtt.fluux.io
 
-**Port:** 1883
+Port: 1883
 
-**Topic:** jie/guan
+Topic: jie/guan
 
 Use this project to test the receiving in Unity.
 
