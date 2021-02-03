@@ -21,7 +21,7 @@ public class byteToImage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        receiveBytes = mqtt.receiveByte;
+        receiveBytes = mqtt.depthByte;
 
         if(receiveBytes != null)
         {
