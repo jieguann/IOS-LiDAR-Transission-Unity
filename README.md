@@ -41,3 +41,5 @@ https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@4.1/api/UnityEngine.
 Note:
 
 For human depth image, make sure enable it on the AR Session Oring
+
+Encode to jpg for faster
