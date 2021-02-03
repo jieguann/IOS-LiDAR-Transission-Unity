@@ -29,7 +29,7 @@ public class DepthScript : MonoBehaviour
     [SerializeField]
     float far;
 
-    public Texture2D m_CameraTexture;
+    Texture2D m_CameraTexture;
     public Texture2D m_DepthTextureFloat;
     public Texture2D m_DepthTextureBGRA;
     Texture2D m_DepthConfidenceR8;

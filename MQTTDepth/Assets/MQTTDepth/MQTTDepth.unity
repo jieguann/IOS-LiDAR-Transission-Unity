@@ -408,6 +408,7 @@ MonoBehaviour:
   humanDepthView: {fileID: 328128513}
   near: 0.2
   far: 3
+  m_CameraTexture: {fileID: 0}
   m_DepthTextureFloat: {fileID: 0}
   m_DepthTextureBGRA: {fileID: 0}
   humanDepthTexture: {fileID: 0}
@@ -1085,7 +1086,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Confidence(RGB)
+  m_Text: Human Depth
 --- !u!222 &1320469292
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1288,6 +1289,10 @@ MonoBehaviour:
   image: {fileID: 165585584}
   depthByte: 
   depthImage: {fileID: 0}
+  colorByte: 
+  colorImage: {fileID: 0}
+  humanByte: 
+  humanImage: {fileID: 0}
 --- !u!4 &1684656839
 Transform:
   m_ObjectHideFlags: 0

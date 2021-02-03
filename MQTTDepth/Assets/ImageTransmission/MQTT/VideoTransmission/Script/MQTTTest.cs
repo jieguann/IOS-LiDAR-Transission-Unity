@@ -53,7 +53,7 @@ namespace M2MqttUnity.Examples
             //client.Publish("M2MQTT_Unity/test", System.Text.Encoding.UTF8.GetBytes("Test message"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             client.Publish("vritualtouch/lidar/depthImage", DepthByteToSend, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             client.Publish("vritualtouch/lidar/colorImage", DepthByteToSend, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
-            client.Publish("vritualtouch/lidar/humanImage", DepthByteToSend, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+            //client.Publish("vritualtouch/lidar/humanImage", DepthByteToSend, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
 
             print("Test message published");
             //AddUiMessage("Test message published.");
