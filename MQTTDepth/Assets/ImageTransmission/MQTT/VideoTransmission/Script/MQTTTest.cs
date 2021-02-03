@@ -22,7 +22,7 @@ namespace M2MqttUnity.Examples
     public class MQTTTest : M2MqttUnityClient
     {
         public getDepth depth;
-        public byte[] byteToSend;
+        public byte[] DepthByte,ColorByte, HumanByte;
         [Tooltip("Set this to true to perform a testing cycle automatically on startup")]
         public bool autoTest = false;
        
@@ -46,8 +46,10 @@ namespace M2MqttUnity.Examples
         {
             
             //client.Publish("M2MQTT_Unity/test", System.Text.Encoding.UTF8.GetBytes("Test message"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
-            client.Publish("teletouch/depthImage", byteToSend, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
-            client.Publish("teletouch/depthImage2", byteToSend, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+            client.Publish("teletouch/depthImage", DepthByte, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+            client.Publish("teletouch/colorImage", ColorByte, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+            client.Publish("teletouch/humanImage", HumanByte, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+
             //print("Test message published");
             //AddUiMessage("Test message published.");
         }
@@ -247,7 +249,9 @@ namespace M2MqttUnity.Examples
         protected override void Update()
         {
             base.Update(); // call ProcessMqttEvents()
-            byteToSend = depth.depthByte;
+            DepthByte = depth.depthByte;
+            ColorByte = depth.colorByte;
+            HumanByte = depth.humanByte;
             
             //TestPublish();
             //ProcessMessage(msg);
