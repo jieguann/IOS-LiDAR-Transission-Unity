@@ -76,6 +76,8 @@ public class DepthScript : MonoBehaviour
             if (m_CameraTexture == null || m_CameraTexture.width != image.width || m_CameraTexture.height != image.height)
             {
                 m_CameraTexture = new Texture2D(image.width, image.height, format, false);
+                //lower resolution of the color
+                //m_CameraTexture = new Texture2D(256, 256, format, false);
             }
 
             // Convert the image to format, flipping the image across the Y axis.
