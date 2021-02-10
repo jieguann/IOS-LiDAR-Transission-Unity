@@ -30,8 +30,8 @@ public class getDepth : MonoBehaviour
         //depthImage = image.m_DepthTextureFloat;
         depthImage = image.m_DepthTextureBGRA;
         //rawImage.texture = depthImage;
-        depthByte = depthImage.EncodeToJPG();
-
+        //depthByte = depthImage.EncodeToJPG();
+        depthByte = Resize(depthImage, 50, 25).EncodeToJPG();
 
         //for color image -- 　Use this will use too much iphone ram and out of memory
         /*
@@ -41,11 +41,11 @@ public class getDepth : MonoBehaviour
         }
         */
         colorImage = image.m_CameraTexture;
-        colorImage.Resize(256, 256, TextureFormat.RGBA4444, false);
-        colorImage.Apply();
-        colorByte = colorImage.EncodeToJPG();
         
-        
+        //colorByte = colorImage.EncodeToJPG();
+        colorByte = Resize(colorImage, 50, 25).EncodeToJPG();
+
+
 
         //For human image
         /*
@@ -54,11 +54,24 @@ public class getDepth : MonoBehaviour
             humanImage = new Texture2D(humanImage.width, humanImage.height, TextureFormat.RGBA4444, false);
         }
         */
-       
+
         humanImage = image.humanDepthTexture;
-        humanByte = humanImage.EncodeToJPG();
+        //humanByte = humanImage.EncodeToJPG();
+        humanByte = Resize(humanImage,50,25).EncodeToJPG();
 
 
 
+    }
+
+    //For reduce the size of the texture
+    Texture2D Resize(Texture2D texture2D,int targetX,int targetY)
+    {
+        RenderTexture rt=new RenderTexture(targetX, targetY,24);
+        RenderTexture.active = rt;
+        Graphics.Blit(texture2D,rt);
+        Texture2D result=new Texture2D(targetX,targetY);
+        result.ReadPixels(new Rect(0,0,targetX,targetY),0,0);
+        result.Apply();
+        return result;
     }
 }

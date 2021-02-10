@@ -408,6 +408,7 @@ MonoBehaviour:
   humanDepthView: {fileID: 328128513}
   near: 0.2
   far: 3
+  m_CameraTexture: {fileID: 0}
   m_DepthTextureFloat: {fileID: 0}
   m_DepthTextureBGRA: {fileID: 0}
   humanDepthTexture: {fileID: 0}
@@ -704,7 +705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585262, guid: d843739baa752c948b1da293164047ef, type: 3}
       propertyPath: brokerAddress
-      value: mqtt.fluux.io
+      value: mqtt.eclipseprojects.io
       objectReference: {fileID: 0}
     - target: {fileID: 8306982129227585263, guid: d843739baa752c948b1da293164047ef, type: 3}
       propertyPath: m_Name
@@ -1287,7 +1288,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 165585584}
   depthByte: 
+  colorByte: 
+  humanByte: 
   depthImage: {fileID: 0}
+  colorImage: {fileID: 0}
+  humanImage: {fileID: 0}
 --- !u!4 &1684656839
 Transform:
   m_ObjectHideFlags: 0
