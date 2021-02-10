@@ -11,10 +11,15 @@ public class getDepth : MonoBehaviour
     public byte[] depthByte,colorByte,humanByte;
     public Texture2D depthImage, colorImage, humanImage;
 
+    public int depthImagePixelWidth;
+    public int depthImagePixelHeight;
+    public Slider depthSlider;
+
 
 
     void Start()
     {
+        depthImagePixelWidth = 200;
         //colorImage = new Texture2D(256, 256, TextureFormat.RGBA4444, false);
     }
     // Update is called once per frame
@@ -31,7 +36,9 @@ public class getDepth : MonoBehaviour
         depthImage = image.m_DepthTextureBGRA;
         //rawImage.texture = depthImage;
         //depthByte = depthImage.EncodeToJPG();
-        depthByte = Resize(depthImage, 100, 50).EncodeToJPG();
+        depthImagePixelWidth = (int)depthSlider.value;
+        depthImagePixelHeight = depthImagePixelWidth / 2;
+        depthByte = Resize(depthImage, depthImagePixelWidth, depthImagePixelHeight).EncodeToJPG();
 
         //for color image -- 　Use this will use too much iphone ram and out of memory
         /*
