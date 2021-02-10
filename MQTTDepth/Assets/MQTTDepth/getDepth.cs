@@ -31,7 +31,7 @@ public class getDepth : MonoBehaviour
         depthImage = image.m_DepthTextureBGRA;
         //rawImage.texture = depthImage;
         //depthByte = depthImage.EncodeToJPG();
-        depthByte = Resize(depthImage, 50, 25).EncodeToJPG();
+        depthByte = Resize(depthImage, 100, 50).EncodeToJPG();
 
         //for color image -- 　Use this will use too much iphone ram and out of memory
         /*
