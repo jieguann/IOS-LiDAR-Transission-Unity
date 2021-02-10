@@ -64,7 +64,7 @@ public class getDepth : MonoBehaviour
 
         humanImage = image.humanDepthTexture;
         //humanByte = humanImage.EncodeToJPG();
-        humanByte = Resize(humanImage,50,25).EncodeToJPG();
+        humanByte = Resize(humanImage, depthImagePixelWidth, depthImagePixelHeight).EncodeToJPG();
 
 
 
