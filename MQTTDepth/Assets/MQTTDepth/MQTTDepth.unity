@@ -594,7 +594,7 @@ RectTransform:
   m_GameObject: {fileID: 317049917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6.5815, y: 6.5815, z: 6.5815}
   m_Children:
   - {fileID: 312118025}
   - {fileID: 470363358}
@@ -604,7 +604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -335}
+  m_AnchoredPosition: {x: 0, y: 28}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &317049919
@@ -652,24 +652,12 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1806878761}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1000
+  m_MaxValue: 400
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1684656837}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &328128511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1618,8 +1606,8 @@ MonoBehaviour:
   depthImage: {fileID: 0}
   colorImage: {fileID: 0}
   humanImage: {fileID: 0}
-  depthImagePixelWidth: 200
-  depthImagePixelHeight: 0
+  depthImagePixelWidth: 300
+  depthImagePixelHeight: 50
   depthSlider: {fileID: 317049919}
 --- !u!4 &1684656839
 Transform:
