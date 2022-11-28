@@ -22,6 +22,8 @@ namespace M2MqttUnity.Examples
     public class MQTTTest : M2MqttUnityClient
     {
         public getDepth depth;
+        public bool sendDepth;
+
         public byte[] DepthByte,ColorByte, HumanByte;
         [Tooltip("Set this to true to perform a testing cycle automatically on startup")]
         public bool autoTest = false;
@@ -255,28 +257,15 @@ namespace M2MqttUnity.Examples
         protected override void Update()
         {
             base.Update(); // call ProcessMqttEvents()
-            DepthByte = depth.depthByte;
-            ColorByte = depth.colorByte;
-            HumanByte = depth.humanByte;
+            if (sendDepth == true)
+            {
+                DepthByte = depth.depthByte;
+                ColorByte = depth.colorByte;
+                HumanByte = depth.humanByte;
+            }
             
-            //TestPublish();
-            //ProcessMessage(msg);
-            /*
-            if (eventMessages.Count > 0)
-            {
-                foreach (string msg in eventMessages)
-                {
-                    ProcessMessage(msg);
-                }
-                eventMessages.Clear();
-            }
-            */
-            /*
-            if (updateUI)
-            {
-                UpdateUI();
-            }
-            */
+            
+            
         }
 
         private void OnDestroy()
