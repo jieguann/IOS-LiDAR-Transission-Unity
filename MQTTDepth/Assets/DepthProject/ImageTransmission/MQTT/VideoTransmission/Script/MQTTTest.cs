@@ -209,7 +209,7 @@ namespace M2MqttUnity.Examples
         {
             string msg = System.Text.Encoding.UTF8.GetString(message);
             
-            StoreMessage(msg);
+            //StoreMessage(msg);
             //Data = JsonMapper.ToObject(msg);
 
             if (topic == "teletouch/depthImage")
